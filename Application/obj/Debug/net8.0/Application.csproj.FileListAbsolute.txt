@@ -1,0 +1,17 @@
+/Users/georgeriley/code/Reactivities/Application/bin/Debug/net8.0/Application.deps.json
+/Users/georgeriley/code/Reactivities/Application/bin/Debug/net8.0/Application.dll
+/Users/georgeriley/code/Reactivities/Application/bin/Debug/net8.0/Application.pdb
+/Users/georgeriley/code/Reactivities/Application/bin/Debug/net8.0/Domain.dll
+/Users/georgeriley/code/Reactivities/Application/bin/Debug/net8.0/Persistence.dll
+/Users/georgeriley/code/Reactivities/Application/bin/Debug/net8.0/Domain.pdb
+/Users/georgeriley/code/Reactivities/Application/bin/Debug/net8.0/Persistence.pdb
+/Users/georgeriley/code/Reactivities/Application/obj/Debug/net8.0/Application.csproj.AssemblyReference.cache
+/Users/georgeriley/code/Reactivities/Application/obj/Debug/net8.0/Application.GeneratedMSBuildEditorConfig.editorconfig
+/Users/georgeriley/code/Reactivities/Application/obj/Debug/net8.0/Application.AssemblyInfoInputs.cache
+/Users/georgeriley/code/Reactivities/Application/obj/Debug/net8.0/Application.AssemblyInfo.cs
+/Users/georgeriley/code/Reactivities/Application/obj/Debug/net8.0/Application.csproj.CoreCompileInputs.cache
+/Users/georgeriley/code/Reactivities/Application/obj/Debug/net8.0/Applicat.44B5EDA2.Up2Date
+/Users/georgeriley/code/Reactivities/Application/obj/Debug/net8.0/Application.dll
+/Users/georgeriley/code/Reactivities/Application/obj/Debug/net8.0/refint/Application.dll
+/Users/georgeriley/code/Reactivities/Application/obj/Debug/net8.0/Application.pdb
+/Users/georgeriley/code/Reactivities/Application/obj/Debug/net8.0/ref/Application.dll
