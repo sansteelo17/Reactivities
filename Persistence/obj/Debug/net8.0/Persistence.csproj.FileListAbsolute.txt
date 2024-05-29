@@ -13,3 +13,4 @@
 /Users/georgeriley/code/Reactivities/Persistence/obj/Debug/net8.0/refint/Persistence.dll
 /Users/georgeriley/code/Reactivities/Persistence/obj/Debug/net8.0/Persistence.pdb
 /Users/georgeriley/code/Reactivities/Persistence/obj/Debug/net8.0/ref/Persistence.dll
+/Users/georgeriley/code/Reactivities/Persistence/obj/Debug/net8.0/Persistence.sourcelink.json
