@@ -2,6 +2,7 @@ using Microsoft.EntityFrameworkCore;
 using Persistence;
 
 var builder = WebApplication.CreateBuilder(args);
+string corsPolicy = "CorsPolicy";
 
 // Add services to the container.
 
@@ -16,6 +17,20 @@ builder.Services.AddDbContext<ApplicationDbContext>(options =>
         b => b.MigrationsAssembly("Persistence"));
 });
 
+builder.Services.AddCors(opt => {
+    opt.AddPolicy(corsPolicy,  builder =>
+    {
+        builder
+        .AllowAnyOrigin()
+        .AllowAnyMethod()
+        .AllowAnyHeader()
+        .WithExposedHeaders()
+        .SetIsOriginAllowedToAllowWildcardSubdomains()
+        .SetIsOriginAllowed(c => c.Contains(":3000"))
+        .SetPreflightMaxAge(TimeSpan.FromSeconds(3600));
+    });
+});
+
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
@@ -25,7 +40,7 @@ if (app.Environment.IsDevelopment())
     app.UseSwaggerUI();
 }
 
-// app.UseHttpsRedirection();
+app.UseCors(corsPolicy);
 
 app.UseAuthorization();
 
