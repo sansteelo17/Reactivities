@@ -1,4 +1,4 @@
-import { FC } from "react";
+import { FC, SyntheticEvent, useState } from "react";
 import { Activity } from "../../../app/models/activity";
 import { Button, Item, Label, Segment } from "semantic-ui-react";
 
@@ -6,13 +6,25 @@ interface IActivityList {
   activities: Activity[];
   selectActivity: (id: string) => void;
   deleteActivity: (id: string) => void;
+  isSubmitting: boolean;
 }
 
 const ActivityList: FC<IActivityList> = ({
   activities,
   selectActivity,
   deleteActivity,
+  isSubmitting,
 }) => {
+  const [target, setTarget] = useState("");
+
+  const handleActivityDelete = (
+    e: SyntheticEvent<HTMLButtonElement>,
+    id: string
+  ) => {
+    setTarget(e.currentTarget.name);
+    deleteActivity(id);
+  };
+
   return (
     <Segment>
       <Item.Group divided>
@@ -35,10 +47,12 @@ const ActivityList: FC<IActivityList> = ({
                   color="blue"
                 />
                 <Button
-                  onClick={() => deleteActivity(activity.id)}
+                  name={activity.id}
+                  onClick={(e) => handleActivityDelete(e, activity.id)}
                   floated="right"
                   content="Delete"
                   color="red"
+                  loading={isSubmitting && target === activity.id}
                 />
                 <Label basic content={activity.category} />
               </Item.Extra>

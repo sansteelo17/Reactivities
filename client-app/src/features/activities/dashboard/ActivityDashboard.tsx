@@ -15,6 +15,7 @@ interface IActivityDashboard {
   closeForm: () => void;
   createOrEdit: (activity: Activity) => void;
   deleteActivity: (id: string) => void;
+  isSubmitting: boolean
 }
 
 const ActivityDashboard: FC<IActivityDashboard> = ({
@@ -27,6 +28,7 @@ const ActivityDashboard: FC<IActivityDashboard> = ({
   closeForm,
   createOrEdit,
   deleteActivity,
+  isSubmitting
 }) => {
   return (
     <Grid>
@@ -35,6 +37,7 @@ const ActivityDashboard: FC<IActivityDashboard> = ({
           activities={activities}
           selectActivity={selectActivity}
           deleteActivity={deleteActivity}
+          isSubmitting={isSubmitting}
         />
       </Grid.Column>
       <Grid.Column width="6">
@@ -50,6 +53,7 @@ const ActivityDashboard: FC<IActivityDashboard> = ({
             closeForm={closeForm}
             activity={selectedActivity}
             createOrEdit={createOrEdit}
+            isSubmitting={isSubmitting}
           />
         )}
       </Grid.Column>

@@ -6,12 +6,14 @@ interface IActivityForm {
   activity: Activity | undefined;
   closeForm: () => void;
   createOrEdit: (activity: Activity) => void;
+  isSubmitting: boolean;
 }
 
 const ActivityForm: FC<IActivityForm> = ({
   activity: selectedActivity,
   closeForm,
   createOrEdit,
+  isSubmitting,
 }) => {
   const initialState = selectedActivity ?? {
     id: "",
@@ -51,31 +53,32 @@ const ActivityForm: FC<IActivityForm> = ({
         <Form.TextArea
           placeholder="Description"
           value={activity.description}
-          name="title"
+          name="description"
           onChange={handleInputChange}
         />
         <Form.Input
           placeholder="Category"
           value={activity.category}
-          name="title"
+          name="category"
           onChange={handleInputChange}
         />
         <Form.Input
           placeholder="Date"
+          type="date"
           value={activity.date}
-          name="title"
+          name="date"
           onChange={handleInputChange}
         />
         <Form.Input
           placeholder="City"
           value={activity.city}
-          name="title"
+          name="city"
           onChange={handleInputChange}
         />
         <Form.Input
           placeholder="Venue"
           value={activity.venue}
-          name="title"
+          name="venue"
           onChange={handleInputChange}
         />
         <Button floated="right" positive type="submit" content="Submit" />
@@ -84,6 +87,7 @@ const ActivityForm: FC<IActivityForm> = ({
           floated="right"
           type="button"
           content="Cancel"
+          loading={isSubmitting}
         />
       </Form>
     </Segment>
