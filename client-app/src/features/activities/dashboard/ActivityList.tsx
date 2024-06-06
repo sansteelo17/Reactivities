@@ -1,21 +1,18 @@
-import { FC, SyntheticEvent, useState } from "react";
+import { SyntheticEvent, useState } from "react";
 import { Activity } from "../../../app/models/activity";
 import { Button, Item, Label, Segment } from "semantic-ui-react";
+import { useStore } from "../../../app/stores/store";
+import { observer } from "mobx-react-lite";
 
-interface IActivityList {
-  activities: Activity[];
-  selectActivity: (id: string) => void;
-  deleteActivity: (id: string) => void;
-  isSubmitting: boolean;
-}
-
-const ActivityList: FC<IActivityList> = ({
-  activities,
-  selectActivity,
-  deleteActivity,
-  isSubmitting,
-}) => {
+const ActivityList = () => {
   const [target, setTarget] = useState("");
+  const { activityStore } = useStore();
+  const {
+    selectActivity,
+    activitiesByDate: activities,
+    deleteActivity,
+    isLoading,
+  } = activityStore;
 
   const handleActivityDelete = (
     e: SyntheticEvent<HTMLButtonElement>,
@@ -52,7 +49,7 @@ const ActivityList: FC<IActivityList> = ({
                   floated="right"
                   content="Delete"
                   color="red"
-                  loading={isSubmitting && target === activity.id}
+                  loading={isLoading && target === activity.id}
                 />
                 <Label basic content={activity.category} />
               </Item.Extra>
@@ -64,4 +61,4 @@ const ActivityList: FC<IActivityList> = ({
   );
 };
 
-export default ActivityList;
+export default observer(ActivityList);

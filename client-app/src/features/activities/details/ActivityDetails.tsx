@@ -7,20 +7,19 @@ import {
   CardMeta,
   Image,
 } from "semantic-ui-react";
-import { Activity } from "../../../app/models/activity";
-import { FC } from "react";
+import { useStore } from "../../../app/stores/store";
+import { observer } from "mobx-react-lite";
 
-interface IActivityDetails {
-  activity: Activity;
-  cancelSelectActivity: () => void;
-  openForm: (id: string) => void;
-}
+const ActivityDetails = () => {
+  const { activityStore } = useStore();
+  const {
+    selectedActivity: activity,
+    openForm,
+    cancelSelectActivity,
+  } = activityStore;
 
-const ActivityDetails: FC<IActivityDetails> = ({
-  activity,
-  cancelSelectActivity,
-  openForm,
-}) => {
+  if (!activity) return;
+
   return (
     <Card fluid>
       <Image src={`/assets/categoryImages/${activity.category}.jpg`} />
@@ -51,4 +50,4 @@ const ActivityDetails: FC<IActivityDetails> = ({
   );
 };
 
-export default ActivityDetails;
+export default observer(ActivityDetails);
