@@ -1,11 +1,14 @@
 {
   "version": 2,
-  "dgSpecHash": "rU36pFJttmjAAEq6FdxX/a/mHYsowNxp+rJhsYeO9i538dwTADHCIkKINw1c0gaJcDpqqtUEzIOTpt2pyQr8pg==",
+  "dgSpecHash": "ovxOPg5npzefuNHeK8XhcTBti/8EZ5xQlB6QLHjs/YouDNEmCD1SN0f/MjPKoqwj79gVa4kn/xwMoHJQdPT/vA==",
   "success": true,
   "projectFilePath": "/Users/georgeriley/code/Reactivities/API/API.csproj",
   "expectedPackageFiles": [
     "/Users/georgeriley/.nuget/packages/automapper/12.0.1/automapper.12.0.1.nupkg.sha512",
     "/Users/georgeriley/.nuget/packages/automapper.extensions.microsoft.dependencyinjection/12.0.1/automapper.extensions.microsoft.dependencyinjection.12.0.1.nupkg.sha512",
+    "/Users/georgeriley/.nuget/packages/fluentvalidation/11.5.1/fluentvalidation.11.5.1.nupkg.sha512",
+    "/Users/georgeriley/.nuget/packages/fluentvalidation.aspnetcore/11.3.0/fluentvalidation.aspnetcore.11.3.0.nupkg.sha512",
+    "/Users/georgeriley/.nuget/packages/fluentvalidation.dependencyinjectionextensions/11.5.1/fluentvalidation.dependencyinjectionextensions.11.5.1.nupkg.sha512",
     "/Users/georgeriley/.nuget/packages/humanizer.core/2.14.1/humanizer.core.2.14.1.nupkg.sha512",
     "/Users/georgeriley/.nuget/packages/mediatr/12.2.0/mediatr.12.2.0.nupkg.sha512",
     "/Users/georgeriley/.nuget/packages/mediatr.contracts/2.0.1/mediatr.contracts.2.0.1.nupkg.sha512",
