@@ -5,6 +5,9 @@
 
 #appsettings file
 
+bin/
+obj/
+
 appsettings.json
 
 # dotenv files
