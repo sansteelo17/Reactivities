@@ -5,8 +5,9 @@
 
 #appsettings file
 
-bin/
-obj/
+# Ignore bin and obj folders
+**/bin/Debug/
+**/obj/
 
 appsettings.json
 

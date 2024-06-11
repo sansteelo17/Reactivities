@@ -12,14 +12,9 @@ public class Details
         public Guid Id { get; set; }
     }
 
-    public class Handler : IRequestHandler<Query, Result<Activity>>
+    public class Handler(ApplicationDbContext context) : IRequestHandler<Query, Result<Activity>>
     {
-        private readonly ApplicationDbContext _context;
-
-        public Handler(ApplicationDbContext context)
-        {
-            _context = context;
-        }
+        private readonly ApplicationDbContext _context = context;
 
         public async Task<Result<Activity>> Handle(Query request, CancellationToken cancellationToken)
         {

@@ -10,14 +10,9 @@ public class List
 {
     public class Query : IRequest<Result<List<Activity>>> { }
 
-    public class Handler : IRequestHandler<Query, Result<List<Activity>>>
+    public class Handler(ApplicationDbContext context) : IRequestHandler<Query, Result<List<Activity>>>
     {
-        private readonly ApplicationDbContext _context;
-
-        public Handler(ApplicationDbContext context)
-        {
-            _context = context;
-        }
+        private readonly ApplicationDbContext _context = context;
 
         public async Task<Result<List<Activity>>> Handle(Query request, CancellationToken cancellationToken)
         {

@@ -21,14 +21,9 @@ public class Create
         }
     }
 
-    public class Handler : IRequestHandler<Command, Result<Unit>>
+    public class Handler(ApplicationDbContext context) : IRequestHandler<Command, Result<Unit>>
     {
-        private readonly ApplicationDbContext _context;
-
-        public Handler(ApplicationDbContext context)
-        {
-            _context = context;
-        }
+        private readonly ApplicationDbContext _context = context;
 
         public async Task<Result<Unit>> Handle(Command request, CancellationToken cancellationToken)
         {
