@@ -15,12 +15,15 @@ const ActivityDetails = () => {
     selectedActivity: activity,
     loadActivity,
     isLoadingInitial,
+    clearSelectedActivity,
   } = activityStore;
   const { id } = useParams();
 
   useEffect(() => {
     if (id) loadActivity(id);
-  }, [id, loadActivity]);
+
+    return () => clearSelectedActivity();
+  }, [id, loadActivity, clearSelectedActivity]);
 
   if (isLoadingInitial || !activity) return <LoadingComponent />;
 
@@ -29,7 +32,7 @@ const ActivityDetails = () => {
       <Grid.Column width={10}>
         <ActivityDetailHeader activity={activity} />
         <ActivityDetailInfo activity={activity} />
-        <ActivityDetailChat />
+        <ActivityDetailChat activityId={activity.id} />
       </Grid.Column>
       <Grid.Column width={6}>
         <ActivityDetailSidebar activity={activity} />

@@ -32,9 +32,9 @@ public static class ApplicationServiceExtensions
             opt.AddPolicy(corsPolicy, services =>
             {
                 services
-                .AllowAnyOrigin()
                 .AllowAnyMethod()
                 .AllowAnyHeader()
+                .AllowCredentials()
                 .WithExposedHeaders()
                 .SetIsOriginAllowedToAllowWildcardSubdomains()
                 .SetIsOriginAllowed(c => c.Contains(":3000"))
@@ -50,6 +50,7 @@ public static class ApplicationServiceExtensions
         services.AddScoped<IUserAccessor, UserAccessor>();
         services.AddScoped<IPhotoAccessor, PhotoAccessor>();
         services.Configure<CloudinarySettings>(configuration.GetSection("Cloudinary"));
+        services.AddSignalR();
 
         return services;
     }
