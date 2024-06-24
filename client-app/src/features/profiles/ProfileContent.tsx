@@ -5,6 +5,7 @@ import { FC } from "react";
 import { Profile } from "../../app/models/profile";
 import ProfileFollowings from "./ProfileFollowings";
 import { useStore } from "../../app/stores/store";
+import ProfileActivities from "./ProfileActivities";
 
 interface IProfileContent {
   profile: Profile;
@@ -23,7 +24,7 @@ const ProfileContent: FC<IProfileContent> = ({ profile }) => {
     },
     {
       menuItem: "Events",
-      render: () => <TabPane>Events Content</TabPane>,
+      render: () => <ProfileActivities />,
     },
     {
       menuItem: "Followers",
